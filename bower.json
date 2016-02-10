@@ -1,0 +1,22 @@
+{
+  "name": "www.oldenborg.nu",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Henrik Oldenborg <mail@zonix.dk>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "animate.css": "~3.5.1"
+  }
+}

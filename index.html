@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+        <link rel="stylesheet" href="/bower_components/animate.css/animate.min.css" media="screen" title="no title" charset="utf-8">
+        <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <script src="/bower_components/wow/dist/wow.min.js" charset="utf-8"></script>
+        <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            new WOW().init();
+
+            $.js = function(el){
+                return $('[data-js=' + el + ']');
+            };
+
+            $.fn.extend({
+                animateCss: function (animationName) {
+                    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                    $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+                    });
+                }
+            });
+
+        </script>
+
+        <style>
+
+            html, body {
+                height: 100%;
+                width: 100%;
+                padding: 0px;
+                margin: 0px;
+                font-family: 'Arimo', sans-serif;
+            }
+
+            h1,h2,h3,h4,h5,h6 {
+                font-family: 'Didact Gothic', sans-serif;
+            }
+
+            html {
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
+
+            .Curtain {
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+            }
+
+            .Curtain__section {
+                -webkit-animation-duration: 0.6s;
+                background: #333;
+                width:50%;
+                height: 100%;
+                position:absolute;
+            }
+
+            .Curtain__section--left {
+                left: 0px;
+                top: 0px
+            }
+
+            .Curtain__section--right {
+                right: 0px;
+                top: 0px
+            }
+
+            .Curtain__body {
+                color: #FFF;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .Curtain__message {
+                -webkit-animation-duration: 0.6s;
+            }
+
+            /* PAGE BORDER */
+    html:before,
+    html:after,
+    body:before,
+    body:after {
+      content: "";
+      background: #eee;
+      opacity: 1;
+      position: fixed;
+      z-index: 99;
+      display: none;
+    }
+    @media (min-width:992px) {
+      html:before,
+      html:after,
+      body:before,
+      body:after {
+        display: block;
+      }
+    }
+    /* ...and position them! */
+    html:before {
+      height: 22px;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 888888;
+    }
+    html:after {
+      width: 22px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 8888888;
+    }
+    body:before {
+      height: 22px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 888888;
+    }
+    body:after {
+      width: 22px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 8888888;
+    }
+    #back-to-top {
+      display: block;
+      position: fixed;
+      right: 40px;
+      bottom: 40px;
+      cursor: pointer;
+      background: #7b5b4b;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      text-align: center;
+      color: #ffffff;
+      z-index: 8888888888;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      opacity: 1;
+      transform: translate(0px, 0px);
+      -webkit-transform: translate(0px, 0px);
+      -moz-transform: translate(0px, 0px);
+      -o-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+    }
+    #back-to-top:hover {
+      background: #111111;
+    }
+    .back-to-top-hide {
+      opacity: 0!important;
+      transform: translate(0px, 12px) !important;
+      -webkit-transform: translate(0px, 12px) !important;
+      -moz-transform: translate(0px, 12px) !important;
+      -o-transform: translate(0px, 12px) !important;
+      -ms-transform: translate(0px, 12px) !important;
+    }
+
+        .loader { margin: 60px auto; font-size: 10px; position: relative;
+        text-indent: -9999em; border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+        border-right: 1.1em solid rgba(255, 255, 255, 0.2); border-bottom: 1.1em
+        solid rgba(255, 255, 255, 0.2); border-left: 1.1em solid #ffffff;
+        -webkit-transform: translateZ(0); -ms-transform: translateZ(0);
+        transform: translateZ(0); -webkit-animation: load8 1.1s infinite linear;
+        animation: load8 1.1s infinite linear; } .loader, .loader:after {
+        border-radius: 50%; width: 10em; height: 10em; } @-webkit-keyframes load8 {
+        0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); } 100% {
+        -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+        @keyframes load8 { 0% { -webkit-transform: rotate(0deg); transform:
+        rotate(0deg); } 100% { -webkit-transform: rotate(360deg); transform:
+        rotate(360deg); } }
+
+        </style>
+
+    </head>
+    <body>
+
+        <div class="Curtain" data-js="Curtain">
+            <div class="Curtain__section Curtain__section--left" data-js="Curtain__section--left"></div>
+            <div class="Curtain__section Curtain__section--right" data-js="Curtain__section--right"></div>
+            <div class="Curtain__body">
+                <div class="Curtain__message" data-js="Curtain__message">
+                    <p>Hi, im Henrik, a webdeveloper from Denmark</p>
+                    <a>Step into my universe</a>
+                </div>
+            </div>
+        </div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <script type="text/javascript">
+
+            $.js('Curtain__message').animateCss('fadeInDown');
+
+            $.js('Curtain').on('click', function () {
+                $.js('Curtain__message').addClass('fadeOutUp animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                    $.js('Curtain__section--left').animateCss('fadeOutLeft');
+                    $.js('Curtain__section--right').animateCss('fadeOutRight');
+                });
+            });
+        </script>
+
+    </body>
+</html>
